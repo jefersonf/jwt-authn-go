@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/jefersonf/jwt-authn-go/env"
+	"github.com/jefersonf/jwt-authn-go/middleware"
 	"github.com/jefersonf/jwt-authn-go/user"
 )
 
@@ -22,5 +23,7 @@ func init() {
 func main() {
 	routes := gin.Default()
 	routes.POST("/signup", user.Signup)
+	routes.POST("/login", user.Login)
+	routes.GET("/validate", middleware.EnsureAuth, user.Validate)
 	routes.Run()
 }
