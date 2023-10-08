@@ -1,4 +1,4 @@
 .env
 
 go.sum
-jwt-auth-go
+jwt-authn-go
