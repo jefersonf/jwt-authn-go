@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/gin-gonic/gin"
 	"github.com/jefersonf/jwt-authn-go/env"
 	"github.com/jefersonf/jwt-authn-go/middleware"
@@ -25,5 +27,6 @@ func main() {
 	routes.POST("/signup", user.Signup)
 	routes.POST("/login", user.Login)
 	routes.GET("/validate", middleware.EnsureAuth, user.Validate)
+	fmt.Println("server API running..")
 	routes.Run()
 }
