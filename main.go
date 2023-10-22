@@ -23,6 +23,7 @@ func init() {
 }
 
 func main() {
+	fmt.Println("Authentication with JWT")
 	routes := gin.Default()
 	routes.POST("/signup", user.Signup)
 	routes.POST("/login", user.Login)
