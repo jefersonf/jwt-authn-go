@@ -60,7 +60,9 @@ Establish a Connection With a Database
 
 ```\c authn_jwt;```
 
-Create a table in the database
+Create a table in the database. 
+
+>This step is not required as we are using gorm.Model as an embedded template for our user.
 
 ```
 CREATE TABLE users (
